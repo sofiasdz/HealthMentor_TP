@@ -1,5 +1,7 @@
 import {cva, VariantProps} from "class-variance-authority";
 import React from "react";
+import {TypeClock} from "./Icon/TypeClock";
+import {TypeTickClicked} from "./Icon/TypeTickClicked";
 
 const cardButtonVariant = cva(['w-full sm:w-fit','rounded-lg '],{
     variants:{
@@ -8,10 +10,10 @@ const cardButtonVariant = cva(['w-full sm:w-fit','rounded-lg '],{
                 "w-10 h-10 left-0 top-0 absolute bg-green-300 rounded-lg"
             ],
             clickeable:[
-                'w-10 h-10 left-0 top-0 absolute rounded-lg border-4 border-neutral-400'
+                'border-4 border-solid border-greyscale-300'
             ],
             passedTime:[
-                "w-10 h-10 left-0 top-0 absolute bg-red-400 rounded-lg"
+                "bg-primary-500 relative"
             ]
         }
     },
@@ -20,18 +22,24 @@ const cardButtonVariant = cva(['w-full sm:w-fit','rounded-lg '],{
     }
 })
 
-
-
 export interface CardButtonProps extends  VariantProps<typeof cardButtonVariant>{
 
 }
 
 
 const CardButton = ({variant, ...rest}:CardButtonProps) => {
-    return (
-        <div className={"w-10 h-10 relative"}>
-            <div className={cardButtonVariant({variant})} {...rest}/>
+    return (<>
+        {variant === "clicked" ? (
+            <TypeTickClicked className="!absolute !w-[40px] !h-[40px] !top-0 !left-0" />
+            )
+        :
+        <div className={`w-[40px] h-[40px] rounded-[10px] ${cardButtonVariant({variant})}`}>
+            {variant === "passedTime" && (
+                <TypeClock className="!absolute !w-[34px] !h-[34px] !top-[3px] !left-[3px]" color="white"/>
+            )}
         </div>
+        }
+        </>
     )
 }
 
