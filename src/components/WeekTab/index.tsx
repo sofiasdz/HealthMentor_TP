@@ -2,20 +2,20 @@ import React from "react";
 import {cva, VariantProps} from "class-variance-authority";
 import {DayButton, DayButtonProps} from "./DayButton/DayButton";
 
-const monthTabVariants = cva(['w-full sm:w-fit','rounded-lg '],{
+const weekTabVariants = cva(['w-full sm:w-fit','rounded-lg '],{
     variants: {
 
     }
 })
 
 
-export interface MonthTabProps extends VariantProps<typeof monthTabVariants>{
+export interface WeekTabProps extends VariantProps<typeof weekTabVariants>{
     activeDay: string;
 }
 
 
 
-export const MonthTab = ({/*activeDay,*/ ...rest}:MonthTabProps) => {
+export const WeekTab = ({/*activeDay,*/ ...rest}:WeekTabProps) => {
 
 
     return (

@@ -1,11 +1,11 @@
 import {Meta, StoryObj} from "@storybook/react";
 import React from "react";
-import {MonthTab} from "./index";
+import {WeekTab} from "./index";
 
 
-const meta: Meta<typeof MonthTab> ={
-    title:'MonthTab',
-    component:MonthTab,
+const meta: Meta<typeof WeekTab> ={
+    title:'WeekTab',
+    component:WeekTab,
     tags: ['autodocs'],
     argTypes:{
         activeDay:{
@@ -18,10 +18,10 @@ const meta: Meta<typeof MonthTab> ={
 
 export default meta
 
-type Story = StoryObj<typeof MonthTab>
+type Story = StoryObj<typeof WeekTab>
 
 export const Default: Story = {
 name:'Default',
-render: (args) => <MonthTab {...args}/>
+render: (args) => <WeekTab {...args}/>
 }
 
