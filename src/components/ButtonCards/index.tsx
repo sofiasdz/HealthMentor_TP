@@ -28,17 +28,21 @@ export interface CardButtonProps extends  VariantProps<typeof cardButtonVariant>
 
 
 const CardButton = ({variant, ...rest}:CardButtonProps) => {
-    return (<>
+    return (
+        <>
         {variant === "clicked" ? (
             <TypeTickClicked className="!absolute !w-[40px] !h-[40px] !top-0 !left-0" />
             )
         :
-        <div className={`w-[40px] h-[40px] rounded-[10px] ${cardButtonVariant({variant})}`}>
-            {variant === "passedTime" && (
-                <TypeClock className="!absolute !w-[34px] !h-[34px] !top-[3px] !left-[3px]" color="white"/>
-            )}
-        </div>
-        }
+            variant === "clickeable" ? (
+                <div className={`w-[40px] h-[40px] rounded-[10px] border-4 border-solid border-greyscale-300`}/>
+
+                )
+                : (
+                <div className={`w-[40px] h-[40px] rounded-[10px] bg-primary-500 relative`}>
+                    <TypeClock className="!absolute !w-[34px] !h-[34px] !top-[3px] !left-[3px]" color="white"/>
+                </div>
+                )}
         </>
     )
 }
