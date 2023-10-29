@@ -2,7 +2,11 @@
 module.exports = {
   content: ["./src/**/*.{html,js,jsx,ts,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      space: {
+        '5' : '24px',
+      }
+    },
     colors:{
       primary:{
         300: '#F9EAE1',
@@ -26,7 +30,7 @@ module.exports = {
         700: '#8DACB2',
       },
       grey:{
-        000: '#FFFFFF',
+        0o00: '#FFFFFF',
         100: '#F9F9F9',
         200: '#FAF7F2',
         300: '#D0D2CA',
@@ -46,7 +50,7 @@ module.exports = {
       'small' : '12px',
         'medium' : '14px',
         'large' : '16px',
-    }
+    },
   },
   plugins: [],
 }
