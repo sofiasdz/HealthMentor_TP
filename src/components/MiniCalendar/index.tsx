@@ -22,7 +22,7 @@ export const MiniCalendar = ({ days, pickedDate,...rest}:MiniCalendarProps) => {
 
 
     return (
-        <div className={"w-[393px] h-[282px] bg-grey-100 flex flex-col items-center rounded-b-[10px]"}>
+        <div className={"w-[393px] h-[282px] bg-grey-100 flex flex-col items-center rounded-b-[10px] shadow-[0px_2px_1px_0px_rgba(208, 210, 202, 0.50)]"}>
             <div className={"my-[60px]"}></div>
             <div className={"w-fit h-[45px] my-[7.5px] overflow-hidden "}>
                 <MonthTab></MonthTab>

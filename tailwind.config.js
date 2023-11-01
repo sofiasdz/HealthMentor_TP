@@ -6,6 +6,9 @@ module.exports = {
       space: {
         '5' : '24px',
         '2.5' : '12px',
+      },
+      boxShadow: {
+        '3xl': '0px 2px 1px 0px rgba(208, 210, 202, 0.50)',
       }
     },
     colors:{
