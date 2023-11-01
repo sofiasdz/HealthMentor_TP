@@ -1,7 +1,7 @@
 import {cva, VariantProps} from "class-variance-authority";
 import React from "react";
 import Button from "../Button";
-import {Add, Back, Home} from "../assets/Icons";
+import {Add, Back} from "../assets/Icons";
 const headerVariant = cva([], {
     variants: {
         variant: {
@@ -43,10 +43,10 @@ export const Header = ({ButtonName, Title ,variant, ...rest}:HeaderProps) => {
 
             {variant == "buttonRight" ? (
             <div className={"flex h-[42px] bg-grey-100 relative"}>
-                <div className={"absolute right-0"}>
+                <div className={"absolute right-0 w-[100px]"}>
                     <Button variant={"ghost"} >
                         <div className={'flex flex-row'}>
-                            <div className={"mr-[8px] mt-[1px]"}>
+                            <div className={"mr-[8px] mt-[1px] w-[48px]"}>
                                 {ButtonName}
                             </div>
                             <div className={"ml-[5px] mt-[3px]"}>

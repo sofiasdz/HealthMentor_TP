@@ -4,13 +4,13 @@ import './App.css';
 import Button from "./components/Button";
 import Texfield from "./components/Textfield"
 import NavItem from "./components/NavItem";
+import {AddMedication} from "./screens/AddMedication";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-       <NavItem></NavItem>
+          <AddMedication></AddMedication>
       </header>
     </div>
   );
