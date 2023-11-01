@@ -13,7 +13,10 @@ const meta: Meta<typeof GoalCard> ={
             defaultValue:'incomplete'
         },
         taskName:{
-            
+            defaultValue:'add a task'
+        },
+        position:{
+            defaultValue: 'def'
         }
     }
 }
@@ -23,10 +26,6 @@ export default meta
 
 type Story = StoryObj<typeof GoalCard>
 
-export const Default: Story = {
-    name:'Default',
-    render: (args) => <GoalCard {...args}/>
-}
 
 export const Clickeable: Story = {
     name:'Completed',
