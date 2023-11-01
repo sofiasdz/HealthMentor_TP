@@ -15,35 +15,33 @@ export interface WeekTabProps extends VariantProps<typeof weekTabVariants>{
 
 
 
-export const WeekTab = ({/*activeDay,*/ ...rest}:WeekTabProps) => {
+export const WeekTab = ({activeDay, ...rest}:WeekTabProps) => {
 
 
     return (
-        <div className="relative w-[382px] h-[51px]">
-            <div className="absolute w-[45px] h-[25px] top-[13px] left-0 [font-family:'SF_Pro-Regular',Helvetica] font-normal text-[#a0a0a0] text-[20px] text-center tracking-[0] leading-[normal]">
+        <div className="relative w-[351px] h-[51px] flex flex-row">
+            <div className="mt-[14px] ml-[14.03px] [font-family:'SF_Pro-Regular',Helvetica] font-normal text-[#a0a0a0] text-[18.03px] text-center tracking-[0] leading-[normal]">
                 Sun
             </div>
-            <div className="absolute w-[51px] h-[24px] top-[14px] left-[57px] [font-family:'SF_Pro-Regular',Helvetica] font-normal text-[#a0a0a0] text-[20px] text-center tracking-[0] leading-[normal] whitespace-nowrap">
+            <div className="mt-[14px] ml-[14.03px] [font-family:'SF_Pro-Regular',Helvetica] font-normal text-[#a0a0a0] text-[18.03px] text-center tracking-[0] leading-[normal] whitespace-nowrap">
                 Mon
             </div>
-            <div className="absolute w-[44px] h-[20px] top-[16px] left-[120px] [font-family:'SF_Pro-Regular',Helvetica] font-normal text-[#a0a0a0] text-[20px] text-center tracking-[0] leading-[normal] whitespace-nowrap">
+            <div className="mt-[14px] ml-[14.03px] [font-family:'SF_Pro-Regular',Helvetica] font-normal text-[#a0a0a0] text-[18.03px] text-center tracking-[0] leading-[normal] whitespace-nowrap">
                 Tue
             </div>
-            <div className="absolute w-[53px] h-[51px] top-0 left-[176px]">
-                <div className="relative w-[52px] h-[51px] left-px">
-                    <div className="absolute w-[51px] h-[51px] top-0 left-px bg-secondary-500 rounded-[25.5px]" />
-                    <div className="absolute w-[52px] h-[18px] top-[15px] left-0 [font-family:'SF_Pro-Regular',Helvetica] font-normal text-greyscale-600 text-[20px] text-center tracking-[0] leading-[normal] whitespace-nowrap">
-                        Wed
-                    </div>
+            <div className="relative w-[52px] h-[51px] ml-[14.03px] left-px">
+                <div className=" w-[51px] h-[51px]  bg-secondary-400 rounded-[25.5px]" />
+                <div className="absolute w-[52px] h-[51px] top-[14px] left-0 [font-family:'SF_Pro-Regular',Helvetica] font-normal text-grey-600 text-[18.03px] text-center tracking-[0] leading-[normal] whitespace-nowrap">
+                    Wed
                 </div>
             </div>
-            <div className="absolute w-[45px] h-[20px] top-[13px] left-[241px] [font-family:'SF_Pro-Regular',Helvetica] font-normal text-[#a0a0a0] text-[20px] text-center tracking-[0] leading-[normal] whitespace-nowrap">
+            <div className="mt-[14px] ml-[14.03px] [font-family:'SF_Pro-Regular',Helvetica] font-normal text-[#a0a0a0] text-[18.03px] text-center tracking-[0] leading-[normal] whitespace-nowrap">
                 Thu
             </div>
-            <div className="absolute w-[30px] h-[20px] top-[13px] left-[298px] [font-family:'SF_Pro-Regular',Helvetica] font-normal text-[#a0a0a0] text-[20px] text-center tracking-[0] leading-[normal] whitespace-nowrap">
+            <div className="mt-[14px] ml-[14.03px] [font-family:'SF_Pro-Regular',Helvetica] font-normal text-[#a0a0a0] text-[18.03px] text-center tracking-[0] leading-[normal] whitespace-nowrap">
                 Fri
             </div>
-            <div className="absolute w-[42px] h-[20px] top-[13px] left-[340px] [font-family:'SF_Pro-Regular',Helvetica] font-normal text-[#a0a0a0] text-[20px] text-center tracking-[0] leading-[normal] whitespace-nowrap">
+            <div className="mt-[14px] ml-[14.03px] [font-family:'SF_Pro-Regular',Helvetica] font-normal text-[#a0a0a0] text-[18.03px] text-center tracking-[0] leading-[normal] whitespace-nowrap">
                 Sat
             </div>
         </div>

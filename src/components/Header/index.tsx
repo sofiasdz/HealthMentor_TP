@@ -43,17 +43,15 @@ export const Header = ({ButtonName, Title ,variant, ...rest}:HeaderProps) => {
 
             {variant == "buttonRight" ? (
             <div className={"flex h-[42px] bg-grey-100 relative"}>
-                <div className={"absolute right-0 w-[100px]"}>
-                    <Button variant={"ghost"} >
+                <div className={"mt-[2px] absolute right-0 w-[80px]"}>
                         <div className={'flex flex-row'}>
-                            <div className={"mr-[8px] mt-[1px] w-[48px]"}>
+                            <div className={" text-[16px] text-primary-500"}>
                                 {ButtonName}
                             </div>
-                            <div className={"ml-[5px] mt-[3px]"}>
+                            <div className={"ml-[5px]"}>
                                 <Add/>
                             </div>
                         </div>
-                    </Button>
                 </div>
                 <div>
 
@@ -63,16 +61,14 @@ export const Header = ({ButtonName, Title ,variant, ...rest}:HeaderProps) => {
                 <>
                     <div className={"h-[42px] bg-grey-100 flex"}>
                         <div className={"w-[100px]"}>
-                            <Button variant={"ghost"} >
                                 <div className={'flex flex-row'}>
-                                    <div className={"mr-[5px] mt-[1px]  "}>
+                                    <div className={" mr-[5px] mt-[1px] "}>
                                         <Back/>
                                     </div>
-                                    <div className={"mr-[8px] mt-[1px]"}>
+                                    <div className={"text-[16px] mr-[8px] mt-[1px] text-primary-500"}>
                                         {ButtonName}
                                     </div>
                                 </div>
-                            </Button>
                         </div>
 
                         <div className={"w-[184px] text-center font-family:'SF_Pro-Regular',Helvetica text-[16px] flex items-center justify-center mt-[4px] "}>
