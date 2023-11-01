@@ -1,44 +1,44 @@
-import React, {ReactNode,ButtonHTMLAttributes} from 'react'
 import {cva, VariantProps} from "class-variance-authority";
+import React from "react";
 
-
-const textfieldVariant = cva(['w-full sm:w-fit',' rounded-[16px] '],{
+const textfieldVariant = cva([], {
     variants:{
         variant:{
-            outlined:[
-                'bg-grey-100 text-grey-600 input-bg-secondary-300  border-grey-300',
-                'hover:bg-secondary-300',
-                'disabled:bg-grey-300 disabled:border-grey-300 disabled:text-grey-700',
-
-            ],
-
-        },
-        size:{
-            small:['px-4 py-2 text-xs'],
-            medium:['px-4 py-3 text-sm'],
+            normal:[],
+            error:[],
+            disabled:[],
         }
     },
     defaultVariants:{
-        variant:'outlined',
-        size:'medium'
+        variant:'normal'
     }
 })
 
-export interface TextfieldProps extends  VariantProps<typeof textfieldVariant>{
-
+export interface TextfieldProps extends VariantProps<typeof textfieldVariant>{
 }
 
-const Textfield = ({variant,size, ...rest}:TextfieldProps) => {
+const Textfield = ({variant, ...rest}:TextfieldProps) => {
     return (
-        <div  className="flex">
-            <div className={textfieldVariant({ size, variant })} {...rest}>
-            <label  >Label </label>
-            <input  className= "bg-grey-100 text-grey-400 hover:bg-secondary-300 bg-grey-000 p-[11px] m-[16px] border-none" />
+        <>
+           {variant === "normal" ? (
+            <div className="flex h-[44px] items-start pl-[16px] pr-0 py-0 relative bg-secondary-400 rounded-[10px]">
+                <div className="flex items-start pl-0 pr-[16px] py-[11px] relative flex-1 self-stretch grow">
+                    <div className="relative w-[100px] h-[22px] mt-[-0.33px] font-regular-subtitle-1 font-[number:var(--regular-subtitle-1-font-weigth)] text-secondary-600 text-[length:var(--regular-subtitle-1-font-size)] tracking-[var(--regular-subtitle-1-letter-spacing)] leading-[var(--regular-subtitle-1-line-height)] whitespace-nowrap overflow-hidden text-ellipsis [display:-webkit-box] [-webkit-line-clamp:1] [-webkit-box-orient:vertical] [font-style:var(--regular-subtitle-1-font-style)]">
+                        Name
+                    </div>
+                    <div className="relative flex-1 mt-[-0.33px] text-[#3c3c434c] font-regular-subtitle-1 font-[number:var(--regular-subtitle-1-font-weight)] text-labelstertiary text-[length:var(--regular-subtitle-1-font-size)] tracking-[var(--regular-subtitle-1-letter-spacing)] leading-[var(--regular-subtitle-1-line-height)] [font-style:var(--regular-subtitle-1-font-style)]">
+                        Value
+                    </div>
+                </div>
             </div>
-        </div>
+           ) : variant === "error" ? (
+            <div>e</div>
+           ) : (
+            <div>i</div>
+           )
+           }
+        </>
     )
 }
-
-
 
 export default Textfield
