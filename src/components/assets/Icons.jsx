@@ -1,7 +1,7 @@
 import React from "react"
 
 
-export const House = (color : string) => {
+export const Home = (color ) => {
 
     return (
         <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -10,7 +10,7 @@ export const House = (color : string) => {
     )
 }
 
-export const Pills = (color : string) => {
+export const Pills = (color ) => {
 
     return (
         <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -27,7 +27,7 @@ export const Pills = (color : string) => {
     )
 }
 
-export const Goals = (color : string) => {
+export const Goals = (color ) => {
 
     return (
         <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -37,7 +37,7 @@ export const Goals = (color : string) => {
 }
 
 
-export const Medicine = (color : string) => {
+export const Medicine = (color ) => {
 
     return (
         <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -46,7 +46,7 @@ export const Medicine = (color : string) => {
     )
 }
 
-export const Add = (color : string) => {
+export const Add = (color ) => {
 
 
     return (
@@ -57,7 +57,7 @@ export const Add = (color : string) => {
     )
 }
 
-export const Back = (color : string) => {
+export const Back = (color ) => {
 
     return (
         <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -67,7 +67,7 @@ export const Back = (color : string) => {
     )
 }
 
-export const Clock = (color : string) => {
+export const Clock = (color ) => {
     return (
         <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_380_1813)">
@@ -83,7 +83,7 @@ export const Clock = (color : string) => {
     )
 }
 
-export const Chat = (color : string) => {
+export const Chat = (color ) => {
 
     return (
         <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
