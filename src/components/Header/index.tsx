@@ -42,7 +42,7 @@ export const Header = ({ButtonName, Title ,variant, ...rest}:HeaderProps) => {
 
 
             {variant == "buttonRight" ? (
-            <div className={"flex h-[42px] bg-grey-100 relative"}>
+            <div className={"flex h-[42px] bg-grey-100 relative border-b border-gray-300"}>
                 <div className={"mt-[2px] absolute right-0 w-[80px]"}>
                         <div className={'flex flex-row'}>
                             <div className={" text-[16px] text-primary-500"}>
@@ -59,7 +59,7 @@ export const Header = ({ButtonName, Title ,variant, ...rest}:HeaderProps) => {
             </div>
             ) : variant == "buttonLeft" ? (
                 <>
-                    <div className={"h-[42px] bg-grey-100 flex"}>
+                    <div className={"h-[42px] bg-grey-100 flex border-b border-grey-300" }>
                         <div className={"w-[100px]"}>
                                 <div className={'flex flex-row'}>
                                     <div className={" mr-[5px] mt-[1px] "}>
@@ -77,7 +77,7 @@ export const Header = ({ButtonName, Title ,variant, ...rest}:HeaderProps) => {
                     </div>
                 </>
             ) :
-                <div className={"h-[42px] bg-grey-100 flex"}>
+                <div className={"h-[42px] bg-grey-100 flex border-b border-gray-300"}>
                 </div>
             }
         </div>

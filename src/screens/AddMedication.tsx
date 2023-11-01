@@ -16,15 +16,15 @@ export const AddMedication = () => {
                 Add New Medicine
             </div>
 
-            <div >
-                <Textfield variant={"normal"}></Textfield>
+            <div className={"w-[361px] ml-[16px] mt-[20px]"}>
+                <Textfield name={"Name"} variant={"normal"}></Textfield>
             </div>
 
             <div className={"[font-family:'SF_Pro-Regular',Helvetica] text-[16px] text-grey-700 text-left mt-[17px] ml-[21px]"}>
                 Time
             </div>
 
-            <img src={timee} alt={"cxcz"}></img>
+            <img className={"h-[280px] ml-[60px]"} src={timee} alt={"cxcz"}></img>
 
             <div className={"[font-family:'SF_Pro-Regular',Helvetica] text-[16px] text-grey-700 text-left mt-[17px] ml-[21px]"} >
                 Day
@@ -37,6 +37,16 @@ export const AddMedication = () => {
                 </div>
                 <div className={"mr-[29px]"}>
                 <CardButton variant={"clickeable"}></CardButton>
+                </div>
+            </div>
+
+            <div className={"w-[361px] ml-[16px] mt-[20px]"}>
+                <Textfield name={"Dose"} variant={"normal"}></Textfield>
+            </div>
+
+            <div className={"flex w-full items-center"}>
+                <div className={" [font-family:'SF_Pro-Regular',Helvetica] w-[146px] h-[40px] rounded-[10px] text-[20px] bg-primary-500 flex justify-center items-center mt-[32px]  mx-auto "}>
+                    Add Medicine
                 </div>
             </div>
 
