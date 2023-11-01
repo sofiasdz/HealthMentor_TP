@@ -8,9 +8,14 @@ const meta: Meta<typeof MonthTab> ={
     component:MonthTab,
     tags: ['autodocs'],
     argTypes:{
-
+           selectedMonth:{
+               options:['January','February','March','April','May','June','July','August','September','October','November','December'],
+               control:{type:'select'},
+                defaultValue:'April'
+           }
+        }
     }
-}
+
 
 export default meta
 

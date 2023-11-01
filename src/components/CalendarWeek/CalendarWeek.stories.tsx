@@ -20,16 +20,16 @@ export default meta
 type Story = StoryObj<typeof CalendarWeek>
 
 const dayss = [
-    {day:'Mon', number:1},
-    {day:'Tue', number:2},
-    {day:'Wed', number:3},
-    {day:'Thu', number:4},
-    {day:'Fri', number:5},
-    {day:'Sat', number:6},
+    {day:'Mon', number:1, passedMonth:false},
+    {day:'Tue', number:2, passedMonth: false},
+    {day:'Wed', number:3, passedMonth: false},
+    {day:'Thu', number:4 , passedMonth: false},
+    {day:'Fri', number:5 , passedMonth: false},
+    {day:'Sat', number:6 , passedMonth: false},
 ]
 
 export const Default: Story = {
 name:'Default',
-render: (args) => <CalendarWeek days={dayss} pickedDate={4}/>
+render: (args) => <CalendarWeek days={dayss} pickedDate={args.pickedDate}/>
 }
 
