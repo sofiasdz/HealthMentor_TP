@@ -27,7 +27,9 @@ export const Default: Story = {
 
 export const Clickeable: Story = {
     name:'Clickeable',
-    render: (args) => <CardButton variant={'clickeable'} {...args}/>
+    render: (args) =>  <CardButton variant={'clickeable'} {...args}/>
+
+
 }
 
 export const Clicked: Story = {
