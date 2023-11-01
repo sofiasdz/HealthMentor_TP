@@ -10,7 +10,7 @@ const calendarTabVariant = cva(['w-full sm:w-fit','rounded-lg '],{
     }
 })
 
-interface Days {
+export interface Days {
     day: string;
     number: number;
 }
@@ -31,7 +31,7 @@ export const CalendarWeek = ({pickedDate, days,...rest}:CalendarTabProps) => {
     }
 
     return(
-        <div className={"flex flex-row space-x-1.5"}>
+        <div className={"flex flex-row space-x-[12px]"}>
             {days.map((day, index) => (
                     <CalendarButton number={day.number.toString()} dayName={day.day} backgroundColor={PickedDateValid() === day.number ? "selected" : "unselected"}  borderColor={PickedDateValid() === day.number ? "selected" : "unselected"}></CalendarButton>
                 ))}
