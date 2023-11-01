@@ -12,6 +12,10 @@ const meta: Meta<typeof MiniCalendar> ={
             options:['January','February','March','April','May','June','July','August','September','October','November','December'],
             control:{type:'select'},
             defaultValue:'April'
+        },
+        pickedDate: {
+            control:{type:'number'},
+            defaultValue:1
         }
     }
 }
