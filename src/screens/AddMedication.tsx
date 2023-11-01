@@ -4,6 +4,7 @@ import timee from "../components/assets/img.png"
 import {WeekTab} from "../components/WeekTab";
 import {CardButton} from "../components/ButtonCards";
 import Textfield from "../components/Textfield";
+import {Footer} from "../components/Footer";
 
 export const AddMedication = () => {
 
@@ -17,14 +18,14 @@ export const AddMedication = () => {
             </div>
 
             <div className={"w-[361px] ml-[16px] mt-[20px]"}>
-                <Textfield name={"Name"} variant={"normal"}></Textfield>
+                <Textfield name={"Name"} value={"Value"} variant={"normal"}></Textfield>
             </div>
 
             <div className={"[font-family:'SF_Pro-Regular',Helvetica] text-[16px] text-grey-700 text-left mt-[17px] ml-[21px]"}>
                 Time
             </div>
 
-            <img className={"h-[280px] ml-[60px]"} src={timee} alt={"cxcz"}></img>
+            <img className={"h-[260px] ml-[70px]"} src={timee} alt={"cxcz"}></img>
 
             <div className={"[font-family:'SF_Pro-Regular',Helvetica] text-[16px] text-grey-700 text-left mt-[17px] ml-[21px]"} >
                 Day
@@ -41,16 +42,16 @@ export const AddMedication = () => {
             </div>
 
             <div className={"w-[361px] ml-[16px] mt-[20px]"}>
-                <Textfield name={"Dose"} variant={"normal"}></Textfield>
+                <Textfield name={"Dose"} value={"Value"} variant={"normal"}></Textfield>
             </div>
 
             <div className={"flex w-full items-center"}>
-                <div className={" [font-family:'SF_Pro-Regular',Helvetica] w-[146px] h-[40px] rounded-[10px] text-[20px] bg-primary-500 flex justify-center items-center mt-[32px]  mx-auto "}>
+                <div className={" [font-family:'SF_Pro-Regular',Helvetica] w-[146px] h-[40px] rounded-[10px] text-[20px] bg-primary-500 flex justify-center items-center mt-[16px] mb-[16px]  mx-auto "}>
                     Add Medicine
                 </div>
             </div>
 
-
+            <Footer></Footer>
         </div>
     )
 }
