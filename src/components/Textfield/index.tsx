@@ -2,13 +2,14 @@ import React, {ReactNode,ButtonHTMLAttributes} from 'react'
 import {cva, VariantProps} from "class-variance-authority";
 
 
-const textfieldVariant = cva(['w-full sm:w-fit','rounded-lg '],{
+const textfieldVariant = cva(['w-full sm:w-fit',' rounded-[16px] '],{
     variants:{
         variant:{
             outlined:[
-                'bg-white text-primary-500 border border-primary-500',
-                'hover:bg-primary-300',
+                'bg-grey-100 text-grey-600 input-bg-secondary-300  border-grey-300',
+                'hover:bg-secondary-300',
                 'disabled:bg-grey-300 disabled:border-grey-300 disabled:text-grey-700',
+
             ],
 
         },
@@ -28,8 +29,14 @@ export interface TextfieldProps extends  VariantProps<typeof textfieldVariant>{
 }
 
 const Textfield = ({variant,size, ...rest}:TextfieldProps) => {
-    return <div><p> Label </p> <input className={textfieldVariant({size, variant})} {...rest} />
-    </div>
+    return (
+        <div  className="flex">
+            <div className={textfieldVariant({ size, variant })} {...rest}>
+            <label  >Label </label>
+            <input  className= "bg-grey-100 text-grey-400 hover:bg-secondary-300 bg-grey-000 p-[11px] m-[16px] border-none" />
+            </div>
+        </div>
+    )
 }
 
 
