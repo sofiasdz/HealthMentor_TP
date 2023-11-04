@@ -34,11 +34,13 @@ name: string;
 
 export const NavItem = ({ name, variant, turnOn ,...rest}:NavitemProps) => {
     return (
-        <div className={`w-[68px] h-[46px] rounded-[10px] flex flex-col justify-center items-center  ${navitemVariant({turnOn})} truncate`}>
+        <div className={`min-w-[68px] w-[68px] h-[46px] rounded-[10px] flex flex-col justify-center items-center  ${navitemVariant({turnOn})} truncate`}>
                 <div className={`w-[28px] h-[28px] flex flex-col items-center  `} >
                     {variant === 'home' ? <House/> : variant === 'goals' ? <Goals/> : <Medicine/>}
                 </div>
-                <div className={`text-primary-500 text-center font-sf-pro text-[11px] font-normal leading-5 [font-family:'SF_Pro-Display',Helvetica]`}>{name}</div>
+            <div className="max-w-[68px] text-primary-500 text-center font-sf-pro text-[11px] font-normal leading-5 [font-family:'SF_Pro-Display',Helvetica] ">
+                {name}
+            </div>
         </div>
     )
 }
