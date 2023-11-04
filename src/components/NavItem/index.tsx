@@ -1,6 +1,6 @@
 import React, {ReactNode,ButtonHTMLAttributes} from 'react'
 import {cva, VariantProps} from "class-variance-authority";
-import {House} from "../assets/Icons";
+import {Goals, House, Medicine} from "../assets/Icons";
 
 
 const navitemVariant = cva(['w-full sm:w-fit' ],{
@@ -11,7 +11,17 @@ const navitemVariant = cva(['w-full sm:w-fit' ],{
             medication:[]
 
         },
-
+        turnOn: {
+            on: [
+                'bg-primary-300 ',
+                'disabled:bg-grey-300 disabled:text-grey-700',
+            ],
+            off: [
+                '',
+                'hover:bg-primary-700',
+                'disabled:bg-grey-300 disabled:border-grey-300 disabled:text-grey-700',
+            ],
+        },
     },
     defaultVariants:{
         variant:'home',
@@ -19,20 +29,19 @@ const navitemVariant = cva(['w-full sm:w-fit' ],{
 })
 
 export interface NavitemProps extends  VariantProps<typeof navitemVariant>{
-
+name: string;
 }
 
-const NavItem = ({variant,...rest}:NavitemProps) => {
+export const NavItem = ({ name, variant, turnOn ,...rest}:NavitemProps) => {
     return (
-        <div className={navitemVariant({ variant})} {...rest}>
-                <div className={`w-[28px] h-[28px] flex flex-col items-center `} >
-                <House></House>
+        <div className={`w-[68px] h-[46px] rounded-[10px] flex flex-col justify-center items-center  ${navitemVariant({turnOn})} truncate`}>
+                <div className={`w-[28px] h-[28px] flex flex-col items-center  `} >
+                    {variant === 'home' ? <House/> : variant === 'goals' ? <Goals/> : <Medicine/>}
                 </div>
-                <p className={`w-[42px] h-[13px] "text-primary-500 [font-family:'SF_Pro-Regular',Helvetica] text-[11px] font-normal text-center`}> Home</p>
+                <div className={`text-primary-500 text-center font-sf-pro text-[11px] font-normal leading-5 [font-family:'SF_Pro-Display',Helvetica]`}>{name}</div>
         </div>
     )
 }
 
 
 
-export default NavItem
