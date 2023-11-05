@@ -33,3 +33,8 @@ name:'Default',
 render: (args) => <CalendarWeek days={dayss} pickedDate={args.pickedDate}/>
 }
 
+export const Selected: Story = {
+name:'Selected',
+render: (args) => <CalendarWeek days={dayss} pickedDate={2}/>
+}
+

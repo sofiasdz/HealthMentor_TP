@@ -18,7 +18,7 @@ const navitemVariant = cva(['w-full sm:w-fit' ],{
             ],
             off: [
                 '',
-                'hover:bg-primary-700',
+                'hover:bg-primary-300',
                 'disabled:bg-grey-300 disabled:border-grey-300 disabled:text-grey-700',
             ],
         },

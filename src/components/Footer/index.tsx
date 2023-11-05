@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {cva, VariantProps} from "class-variance-authority";
 import {NavItem} from "../NavItem";
 
@@ -16,14 +16,39 @@ interface FooterProps extends VariantProps<typeof footerVariants>{
 
 export const Footer = ({...rest}:FooterProps) => {
 
+    const [goals, setGoals] = useState<"on" | "off">("off");
+    const [home, setHome] = useState<"on" | "off">("off");
+    const [medication, setMedication] = useState<"on" | "off">("off");
+
+    const changeVariant = (variant : string) => {
+        if (variant === "goals") {
+            setGoals("on")
+            setHome("off")
+            setMedication("off")
+        } else if (variant === "home") {
+            setGoals("off")
+            setHome("on")
+            setMedication("off")
+        } else {
+            setGoals("off")
+            setHome("off")
+            setMedication("on")
+        }
+    }
+
     return (
         <div className={" w-full flex flex-col justify-center items-center bg-grey-100 border-t border-grey-400"}>
             <div className={"flex p-2 px-16 justify-between items-start self-stretch"}>
-                <NavItem name={"Goals"} variant={"goals"}></NavItem>
+                <div className={"cursor-pointer"} onClick={() => changeVariant("goals")}>
+                <NavItem name={"Goals"} variant={"goals"} turnOn={goals} ></NavItem>
+                </div>
 
-                <NavItem name={"Home"} variant={"home"}></NavItem>
-
-                <NavItem name={"Medication"} variant={"medication"}></NavItem>
+                <div className={"cursor-pointer"} onClick={() => changeVariant("home")}>
+                <NavItem name={"Home"} variant={"home"} turnOn={home}></NavItem>
+                </div>
+                <div className={"cursor-pointer"} onClick={() => changeVariant("medication")}>
+                <NavItem name={"Medication"} variant={"medication"} turnOn={medication}></NavItem>
+                </div>
             </div>
 
 

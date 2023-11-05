@@ -26,13 +26,18 @@ export default meta
 
 type Story = StoryObj<typeof GoalCard>
 
+export const Default: Story = {
+    name:'Default',
+    render: (args) => <GoalCard {...args}/>
+}
+
 
 export const Clickeable: Story = {
     name:'Completed',
-    render: (args) => <GoalCard variant={'completed'} {...args}/>
+    render: (args) => <GoalCard variant={'completed'} icon={"ejercicio"} taskName={"Sentadillas 5"} position={"mid"}/>
 }
 
 export const Clicked: Story = {
     name:'Incomplete',
-    render: (args) => <GoalCard variant={'incomplete'} {...args}/>
+    render: (args) => <GoalCard variant={'incomplete'} icon={"ejercicio"} taskName={"Sentadillas 5"} position={"mid"}/>
 }
