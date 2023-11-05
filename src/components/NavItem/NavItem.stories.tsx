@@ -1,7 +1,6 @@
 import {Meta, StoryObj} from "@storybook/react";
 import React from "react";
 import {NavItem} from "./index";
-import {Goals as goalIcon, Medicine, House} from "../assets/Icons";
 
 const meta: Meta<typeof NavItem> ={
     title:'NavItem',
