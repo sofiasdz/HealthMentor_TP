@@ -20,18 +20,22 @@ export default meta
 
 type Story = StoryObj<typeof Textfield>
 
+export const Default: Story = {
+    name:'Default',
+    render: (args) => <div className={'m-4'}> <Textfield {...args}/> </div>
+}
 
 export const DefaultTextfield: Story = {
-    name:'Default',
-    render: (args) => <div className={'m-4'}> <Textfield variant={'normal'} {...args}/> </div>
+    name:'Normal',
+    render: (args) => <div className={'m-4'}> <Textfield variant={'Normal'} placeHolder={args.placeHolder} name={"Name"}/> </div>
 }
 
 export const ErrorTextfield: Story = {
     name:'Error',
-    render: (args) => <div className={'m-4'}> <Textfield variant={'error'} {...args}/> </div>
+    render: (args) => <div className={'m-4'}> <Textfield variant={'Error'} placeHolder={args.placeHolder} name={"Name"}/> </div>
 }
 
 export const DisabledTextfield: Story = {
     name:'Disabled',
-    render: (args) => <div className={'m-4'}> <Textfield variant={'disabled'} {...args}/> </div>
+    render: (args) => <div className={'m-4'}> <Textfield variant={'Disabled'} placeHolder={args.placeHolder} name={"Name"}/> </div>
 }

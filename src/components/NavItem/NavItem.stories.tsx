@@ -36,16 +36,16 @@ export const Default: Story= {
 export const Home: Story = {
     name:'Home',
     render: (args) => (
-        <NavItem name={"Home"} variant={"home"}/>
+        <NavItem name={"Home"} variant={"home"} turnOn={"off"}/>
     )
 }
 
 export const Goals: Story = {
     name:'Goals',
-    render: (args) => <NavItem  name={"Goals"} variant={"goals"}/>
+    render: (args) => <NavItem  name={"Goals"} variant={"goals"} turnOn={"off"}/>
 }
 
 export const Medication: Story = {
     name:'Medication',
-    render: (args) => <NavItem name={"Medication"} variant={"medication"}/>
+    render: (args) => <NavItem name={"Medication"} variant={"medication"} turnOn={"off"}/>
 }

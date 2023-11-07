@@ -20,18 +20,23 @@ export default meta
 
 type Story = StoryObj<typeof MedicationAlert>
 
+export const Default: Story = {
+    name:'Default',
+    render: (args) => <MedicationAlert {...args}/>
+}
+
 
 export const SevenStreak: Story = {
     name:'blue',
-    render: (args) => <div className={'m-4'}> <MedicationAlert variant={'blue'} {...args}/> </div>
+    render: (args) => <div className={'m-4'}> <MedicationAlert variant={'blue'} medication={"Insuline"} time={"8:30 AM"}/> </div>
 }
 
 export const ThirtyStreak: Story = {
     name:'orange',
-    render: (args) => <div className={'m-4'}> <MedicationAlert variant={'orange'} {...args}/> </div>
+    render: (args) => <div className={'m-4'}> <MedicationAlert variant={'orange'} medication={"Insuline"} time={"8:30 AM"}/> </div>
 }
 
 export const NinetyStreak: Story = {
     name:'green',
-    render: (args) => <div className={'m-4'}> <MedicationAlert variant={'green'} {...args}/> </div>
+    render: (args) => <div className={'m-4'}> <MedicationAlert variant={'green'} medication={"Insuline"} time={"8:30 AM"}/> </div>
 }

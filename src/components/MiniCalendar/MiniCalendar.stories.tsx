@@ -40,3 +40,8 @@ export const Default: Story = {
 name:'Default',
 render: (args) => <MiniCalendar days={dayss} pickedDate={args.pickedDate} selectedMonth={args.selectedMonth}/>
 }
+
+export const Selected: Story = {
+name:'Selected',
+render: (args) => <MiniCalendar days={dayss} pickedDate={1} selectedMonth={"April"}/>
+}

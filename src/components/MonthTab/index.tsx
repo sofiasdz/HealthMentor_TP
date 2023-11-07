@@ -44,28 +44,5 @@ export const MonthTab = ({selectedMonth, ...rest}:MonthTabProps) => {
             </div>
         ))}
         </div>
-        // <div className="w-[393px] h-[45px] items-center flex justify-center space-x-5">
-        //     <div className="text-grey-300 text-sm blur-[1px] self-center my-auto [font-family:'SF_Pro-Regular',Helvetica]" >
-        //         February
-        //     </div>
-        //     <div className="text-grey-600 text-sm self-center my-auto [font-family:'SF_Pro-Regular',Helvetica]" >
-        //         March
-        //     </div>
-        //     <div className="text-grey-0 text-center text-sm self-stretch  bg-secondary-500 px-3 py-2.5 rounded-xl whitespace-nowrap ">
-        //         April
-        //     </div>
-        //     <div className="text-grey-600 text-sm self-center my-auto [font-family:'SF_Pro-Regular',Helvetica]" >
-        //         May
-        //     </div>
-        //     <div className="text-grey-600 text-sm self-center my-auto [font-family:'SF_Pro-Regular',Helvetica]" >
-        //         June
-        //     </div>
-        //     <div className="text-grey-600 text-sm self-center my-auto [font-family:'SF_Pro-Regular',Helvetica]" >
-        //         July
-        //     </div>
-        //     <div className="text-grey-300 text-sm blur-[1px] self-center my-auto [font-family:'SF_Pro-Regular',Helvetica]" >
-        //         August
-        //     </div>
-        // </div>
     )
 }

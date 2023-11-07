@@ -18,7 +18,7 @@ export const AddMedication = () => {
             </div>
 
             <div className={"w-[361px] ml-[16px] mt-[20px]"}>
-                <Textfield name={"Name"} value={"Value"} variant={"normal"}></Textfield>
+                <Textfield name={"Name"} value={"Value"} variant={"Normal"}></Textfield>
             </div>
 
             <div className={"[font-family:'SF_Pro-Regular',Helvetica] text-[16px] text-grey-700 text-left mt-[17px] ml-[21px]"}>
@@ -42,7 +42,7 @@ export const AddMedication = () => {
             </div>
 
             <div className={"w-[361px] ml-[16px] mt-[20px]"}>
-                <Textfield name={"Dose"} value={"Value"} variant={"normal"}></Textfield>
+                <Textfield name={"Dose"} value={"Value"} variant={"Normal"}></Textfield>
             </div>
 
             <div className={"flex w-full items-center"}>

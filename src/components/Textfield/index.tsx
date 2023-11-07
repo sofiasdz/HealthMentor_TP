@@ -4,42 +4,42 @@ import React from "react";
 const textfieldVariant = cva([], {
     variants:{
         variant:{
-            normal:[],
-            error:[],
-            disabled:[],
+            Normal:[],
+            Error:[],
+            Disabled:[],
         }
     },
     defaultVariants:{
-        variant:'normal'
+        variant:'Normal'
     }
 })
 
 export interface TextfieldProps extends VariantProps<typeof textfieldVariant>{
     name : string;
-    value: string
+    placeHolder: string
 }
 
-const Textfield = ({name, value , variant, ...rest}:TextfieldProps) => {
+const Textfield = ({name, placeHolder , variant, ...rest}:TextfieldProps) => {
+    const [inputValue, setInputValue] = React.useState<string>("")
+
     return (
-        <>
-           {variant === "normal" ? (
-            <div className="flex h-[44px] items-start  pr-0 py-0 relative bg-grey-0 rounded-[10px] border border-grey-300 ">
-                <div className="flex items-start pl-0 pr-[16px] py-[11px] relative flex-1 self-stretch grow">
-                    <div className="relative w-[80px] ml-[16px] font-regular-subtitle-1 font-[number:var(--regular-subtitle-1-font-weigth)] text-grey-700 text-[17px] tracking-[var(--regular-subtitle-1-letter-spacing)] leading-[var(--regular-subtitle-1-line-height)] whitespace-nowrap overflow-hidden text-ellipsis [display:-webkit-box] [-webkit-line-clamp:1] [-webkit-box-orient:vertical] [font-style:var(--regular-subtitle-1-font-style)]">
-                        {name}
-                    </div>
-                    <div className="relative flex-1 text-[#3c3c434c] font-regular-subtitle-1 font-[number:var(--regular-subtitle-1-font-weight)] text-labelstertiary text-[17px] tracking-[var(--regular-subtitle-1-letter-spacing)] leading-[var(--regular-subtitle-1-line-height)] [font-style:var(--regular-subtitle-1-font-style)]">
-                        {value}
-                    </div>
+        <div className={`flex h-[44px] pt-[11px] pl-[16px] pr-[16px] pb-[11px] flex-1 flex-row ${variant == "Error" ? " border border-primary-700" : variant == "Disabled" ? "" : "border border-grey-300"} rounded-[10px]`}>
+            <div className={"flex items-center w-full"}>
+                <div className={`font-sans text-base ${variant == "Error" ? "text-primary-500" : "text-[rgba(60,60,67,0.30)]" } font-normal leading-[120%] mr-[20px]`}>
+                    {name}
+                </div>
+                <div className={`w-full ${variant == "Disabled" ? "" : "text-center"} flex`}>
+                    {variant == "Disabled" ? (
+                        <div className={"min-w-full   outline-none text-[rgba(60,60,67,0.63)]"}>
+                            {placeHolder}
+                        </div>
+                    ) : (
+                        <input className={`min-w-full p-[9px] items-center outline-none ${variant == "Error" ? "text-primary-700" : "text-grey-700" } `} type={"text"} placeholder={placeHolder} value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
+                    )}
                 </div>
             </div>
-           ) : variant === "error" ? (
-            <div>e</div>
-           ) : (
-            <div>i</div>
-           )
-           }
-        </>
+        </div>
+
     )
 }
 

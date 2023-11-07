@@ -26,3 +26,8 @@ name:'Default',
 render: (args) => <MonthTab {...args}/>
 }
 
+export const Selected: Story = {
+name:'Selected',
+render: (args) => <MonthTab selectedMonth={"April"}/>
+}
+
