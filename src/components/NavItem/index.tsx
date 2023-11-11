@@ -3,7 +3,7 @@ import {cva, VariantProps} from "class-variance-authority";
 import {Goals, House, Medicine} from "../assets/Icons";
 
 
-const navitemVariant = cva(['w-full sm:w-fit' ],{
+const navItemVariant = cva(['w-full sm:w-fit' ],{
     variants:{
         variant:{
             home:[],
@@ -28,13 +28,13 @@ const navitemVariant = cva(['w-full sm:w-fit' ],{
     }
 })
 
-export interface NavitemProps extends  VariantProps<typeof navitemVariant>{
+export interface NavItemProps extends  VariantProps<typeof navItemVariant>{
 name: string;
 }
 
-export const NavItem = ({ name, variant, turnOn ,...rest}:NavitemProps) => {
+export const NavItem = ({ name, variant, turnOn ,...rest}:NavItemProps) => {
     return (
-        <div className={`min-w-[68px] w-[68px] h-[46px] rounded-[10px] flex flex-col justify-center items-center  ${navitemVariant({turnOn})} truncate`}>
+        <div className={`min-w-[68px] w-[68px] h-[46px] rounded-[10px] flex flex-col justify-center items-center  ${navItemVariant({turnOn})} truncate`}>
                 <div className={`w-[28px] h-[28px] flex flex-col items-center  `} >
                     {variant === 'home' ? <House/> : variant === 'goals' ? <Goals/> : <Medicine/>}
                 </div>

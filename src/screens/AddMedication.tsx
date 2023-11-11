@@ -3,7 +3,7 @@ import {Header} from "../components/Header";
 import timee from "../components/assets/img.png"
 import {WeekTab} from "../components/WeekTab";
 import {CardButton} from "../components/ButtonCards";
-import Textfield from "../components/Textfield";
+import TextField from "../components/Textfield";
 import {Footer} from "../components/Footer";
 
 export const AddMedication = () => {
@@ -18,7 +18,7 @@ export const AddMedication = () => {
             </div>
 
             <div className={"w-[361px] ml-[16px] mt-[20px]"}>
-                <Textfield name={"Name"} value={"Value"} variant={"Normal"}></Textfield>
+                <TextField name={"Name"} placeHolder={"Value"} variant={"Normal"}></TextField>
             </div>
 
             <div className={"[font-family:'SF_Pro-Regular',Helvetica] text-[16px] text-grey-700 text-left mt-[17px] ml-[21px]"}>
@@ -42,7 +42,7 @@ export const AddMedication = () => {
             </div>
 
             <div className={"w-[361px] ml-[16px] mt-[20px]"}>
-                <Textfield name={"Dose"} value={"Value"} variant={"Normal"}></Textfield>
+                <TextField name={"Dose"} placeHolder={"Value"} variant={"Normal"}></TextField>
             </div>
 
             <div className={"flex w-full items-center"}>

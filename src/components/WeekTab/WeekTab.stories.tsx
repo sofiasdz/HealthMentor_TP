@@ -9,7 +9,7 @@ const meta: Meta<typeof WeekTab> ={
     tags: ['autodocs'],
     argTypes:{
         activeDay:{
-           // options:['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],
+            options:['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],
             control:{type:'select'},
             defaultValue:'Mon'
         }

@@ -1,10 +1,10 @@
 import React from "react";
 import {Meta, StoryObj} from "@storybook/react";
-import Textfield from "./index";
+import TextField from "./index";
 
-const meta: Meta<typeof Textfield> ={
+const meta: Meta<typeof TextField> ={
     title:'Textfield',
-    component:Textfield,
+    component:TextField,
     tags: ['autodocs'],
     argTypes:{
         variant:{
@@ -18,24 +18,24 @@ const meta: Meta<typeof Textfield> ={
 
 export default meta
 
-type Story = StoryObj<typeof Textfield>
+type Story = StoryObj<typeof TextField>
 
 export const Default: Story = {
     name:'Default',
-    render: (args) => <div className={'m-4'}> <Textfield {...args}/> </div>
+    render: (args) => <div className={'m-4'}> <TextField {...args}/> </div>
 }
 
 export const DefaultTextfield: Story = {
     name:'Normal',
-    render: (args) => <div className={'m-4'}> <Textfield variant={'Normal'} placeHolder={args.placeHolder} name={"Name"}/> </div>
+    render: (args) => <div className={'m-4'}> <TextField variant={'Normal'} placeHolder={args.placeHolder} name={"Name"}/> </div>
 }
 
 export const ErrorTextfield: Story = {
     name:'Error',
-    render: (args) => <div className={'m-4'}> <Textfield variant={'Error'} placeHolder={args.placeHolder} name={"Name"}/> </div>
+    render: (args) => <div className={'m-4'}> <TextField variant={'Error'} placeHolder={args.placeHolder} name={"Name"}/> </div>
 }
 
 export const DisabledTextfield: Story = {
     name:'Disabled',
-    render: (args) => <div className={'m-4'}> <Textfield variant={'Disabled'} placeHolder={args.placeHolder} name={"Name"}/> </div>
+    render: (args) => <div className={'m-4'}> <TextField variant={'Disabled'} placeHolder={args.placeHolder} name={"Name"}/> </div>
 }

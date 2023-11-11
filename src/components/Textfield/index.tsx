@@ -1,7 +1,7 @@
 import {cva, VariantProps} from "class-variance-authority";
 import React from "react";
 
-const textfieldVariant = cva([], {
+const textFieldVariant = cva([], {
     variants:{
         variant:{
             Normal:[],
@@ -14,12 +14,12 @@ const textfieldVariant = cva([], {
     }
 })
 
-export interface TextfieldProps extends VariantProps<typeof textfieldVariant>{
+export interface TextfieldProps extends VariantProps<typeof textFieldVariant>{
     name : string;
     placeHolder: string
 }
 
-const Textfield = ({name, placeHolder , variant, ...rest}:TextfieldProps) => {
+const TextField = ({name, placeHolder , variant, ...rest}:TextfieldProps) => {
     const [inputValue, setInputValue] = React.useState<string>("")
 
     return (
@@ -43,4 +43,4 @@ const Textfield = ({name, placeHolder , variant, ...rest}:TextfieldProps) => {
     )
 }
 
-export default Textfield
+export default TextField

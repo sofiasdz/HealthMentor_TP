@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {cva, VariantProps} from "class-variance-authority";
 import {DayButton, DayButtonProps} from "./DayButton/DayButton";
 
@@ -13,37 +13,70 @@ export interface WeekTabProps extends VariantProps<typeof weekTabVariants>{
     activeDay: string;
 }
 
-
+interface Day {
+    day: string,
+    active: boolean,
+}
 
 export const WeekTab = ({activeDay, ...rest}:WeekTabProps) => {
+    const [days, setDays] = useState<Day[]> ([
+        {
+         day : "Sun",
+         active: false
+        },
+        {
+            day: "Mon",
+            active: false
+        },
+        {
+            day: "Tue",
+            active: false
+        },
+        {
+            day: "Wed",
+            active: true
+        },
+        {
+            day: "Thu",
+            active: false
+        },
+        {
+            day: "Fri",
+            active: false
+        },
+        {
+            day: "Sat",
+            active: false
+        }])
+
+    useEffect(() => {
+        // Update the active day when the activeDay prop changes
+        const updatedDays = days.map((d) => ({
+            day: d.day,
+            active: d.day === activeDay,
+        }));
+        setDays(updatedDays);
+    }, [activeDay]);
+
+    const handleClick = (day: string): void => {
+        const updatedDays = days.map((d) => ({
+            day: d.day,
+            active: d.day === day,
+        }));
+
+        setDays(updatedDays);
+    };
 
 
     return (
-        <div className="relative w-[351px] h-[51px] flex flex-row">
-            <div className="mt-[14px] ml-[14.03px] [font-family:'SF_Pro-Regular',Helvetica] font-normal text-[#a0a0a0] text-[18.03px] text-center tracking-[0] leading-[normal]">
-                Sun
-            </div>
-            <div className="mt-[14px] ml-[14.03px] [font-family:'SF_Pro-Regular',Helvetica] font-normal text-[#a0a0a0] text-[18.03px] text-center tracking-[0] leading-[normal] whitespace-nowrap">
-                Mon
-            </div>
-            <div className="mt-[14px] ml-[14.03px] [font-family:'SF_Pro-Regular',Helvetica] font-normal text-[#a0a0a0] text-[18.03px] text-center tracking-[0] leading-[normal] whitespace-nowrap">
-                Tue
-            </div>
-            <div className="relative w-[52px] h-[51px] ml-[14.03px] left-px">
-                <div className=" w-[51px] h-[51px]  bg-secondary-400 rounded-[25.5px]" />
-                <div className="absolute w-[52px] h-[51px] top-[14px] left-0 [font-family:'SF_Pro-Regular',Helvetica] font-normal text-grey-600 text-[18.03px] text-center tracking-[0] leading-[normal] whitespace-nowrap">
-                    Wed
+        <div className={"flex flex-row space-x-[12px]"}>
+            {days.map((day) => (
+                <div className={"cursor-pointer"} onClick={() => handleClick(day.day)}>
+                    <DayButton day={day.day} active={day.active}></DayButton>
                 </div>
-            </div>
-            <div className="mt-[14px] ml-[14.03px] [font-family:'SF_Pro-Regular',Helvetica] font-normal text-[#a0a0a0] text-[18.03px] text-center tracking-[0] leading-[normal] whitespace-nowrap">
-                Thu
-            </div>
-            <div className="mt-[14px] ml-[14.03px] [font-family:'SF_Pro-Regular',Helvetica] font-normal text-[#a0a0a0] text-[18.03px] text-center tracking-[0] leading-[normal] whitespace-nowrap">
-                Fri
-            </div>
-            <div className="mt-[14px] ml-[14.03px] [font-family:'SF_Pro-Regular',Helvetica] font-normal text-[#a0a0a0] text-[18.03px] text-center tracking-[0] leading-[normal] whitespace-nowrap">
-                Sat
-            </div>
+            ))
+
+            }
         </div>
     )
 
