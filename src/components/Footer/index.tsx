@@ -38,7 +38,7 @@ export const Footer = ({...rest}:FooterProps) => {
 
     return (
         <div className={" w-full flex flex-col justify-center items-center bg-grey-100 border-t border-grey-400"}>
-            <div className={"flex p-2 px-16 justify-between items-start self-stretch"}>
+            <div className={"flex p-2 px-[16px] justify-between items-start self-stretch w-full"}>
                 <div className={"cursor-pointer"} onClick={() => changeVariant("goals")}>
                 <NavItem name={"Goals"} variant={"goals"} turnOn={goals} ></NavItem>
                 </div>

@@ -13,7 +13,7 @@ export const AddMedication = () => {
         <div className={"w-[393px] h-[852px] bg-grey-200"}>
             <Header Title={""} ButtonName={"Back"} variant={"buttonLeft"}></Header>
 
-            <div className={"[font-family:'SF_Pro-Medium',Helvetica] text-[32px] text-grey-700 text-left mt-[20px] ml-[22px]"} >
+            <div className={"[font-family:'SF_Pro-Medium',Helvetica] text-[32px] text-grey-700 text-left mt-[20px] ml-[21px]"} >
                 Add New Medicine
             </div>
 
@@ -29,6 +29,8 @@ export const AddMedication = () => {
 
             <div className={"[font-family:'SF_Pro-Regular',Helvetica] text-[16px] text-grey-700 text-left mt-[17px] ml-[21px]"} >
                 Day
+            </div>
+            <div className={"flex items-center justify-center w-full mt-[10px]"}>
                 <WeekTab activeDay={"Wednesday"}></WeekTab>
             </div>
 

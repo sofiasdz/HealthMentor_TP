@@ -69,7 +69,7 @@ export const WeekTab = ({activeDay, ...rest}:WeekTabProps) => {
 
 
     return (
-        <div className={"flex flex-row space-x-[12px]"}>
+        <div className={"flex flex-row space-x-[10px]"}>
             {days.map((day) => (
                 <div className={"cursor-pointer"} onClick={() => handleClick(day.day)}>
                     <DayButton day={day.day} active={day.active}></DayButton>
