@@ -5,6 +5,7 @@ import {WeekTab} from "../components/WeekTab";
 import {CardButton} from "../components/ButtonCards";
 import TextField from "../components/Textfield";
 import {Footer} from "../components/Footer";
+import Button from "../components/Button";
 
 export const AddMedication = () => {
 
@@ -47,9 +48,9 @@ export const AddMedication = () => {
                 <TextField name={"Dose"} placeHolder={"Value"} variant={"Normal"}></TextField>
             </div>
 
-            <div className={"flex w-full items-center"}>
-                <div className={" [font-family:'SF_Pro-Regular',Helvetica] w-[146px] h-[40px] rounded-[10px] text-[20px] bg-primary-500 flex justify-center items-center mt-[16px] mb-[16px]  mx-auto "}>
-                    Add Medicine
+            <div className={"flex items-center w-full  justify-center"}>
+                <div className={"w-[146px] h-[40px] mt-[16px] mb-[16px] justify-center"}>
+                    <Button variant={"default"} name={"Add medicine"} onClick={() => {}}/>
                 </div>
             </div>
 

@@ -5,46 +5,28 @@ import {cva, VariantProps} from "class-variance-authority";
 const buttonVariant = cva(['w-full sm:w-fit','rounded-lg '],{
     variants:{
         variant:{
-            fulfilled:[
-                'bg-primary-500 text-white',
-                'hover:bg-primary-700 hover:text-white',
-                'disabled:bg-grey-300 disabled:text-grey-700',
-            ],
-            outlined:[
-                'bg-white text-primary-500 border border-primary-500',
-                'hover:bg-primary-300',
-                'disabled:bg-grey-300 disabled:border-grey-300 disabled:text-grey-700',
-            ],
-            ghost: [
-                "bg-transparent text-primary-500",
-                "hover:bg-primary-300 hover:text-primary-500",
-                "disabled:bg-grey-100 disabled:text-grey-700"
-            ],
-            white: [
-                "bg-white text-primary-500",
-                "hover:bg-primary-300 hover:text-primary-500",
-                "disabled:bg-grey-100 disabled:text-grey-700"
-            ],
-            black:[]
+            default : [],
+            disabled : [],
         },
-        size:{
-            small:['px-4 py-2 text-xs'],
-            medium:['px-4 py-3 text-sm'],
-            large:['px-4 py-3 text-base'],
-        }
     },
     defaultVariants:{
-        variant:'fulfilled',
-        size:'medium'
+        variant:'default',
+
     }
 })
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariant>{
-
+name : string;
+onClick: () => void;
 }
 
-const Button = ({variant,size, ...rest}:ButtonProps) => {
-    return <button className={buttonVariant({size, variant})} {...rest}/>
+const Button = ({variant, name , onClick, ...rest}:ButtonProps) => {
+
+    return (
+        <div className={`h-full w-full [font-family:'SF_Pro-Regular',Helvetica] rounded-[10px] text-grey-100 text-[20px] ${variant == "default" ? "bg-primary-500 cursor-pointer hover:bg-primary-700" : "bg-primary-400 "} flex justify-center items-center `}>
+            Add Medicine
+        </div>
+    )
 }
 
 

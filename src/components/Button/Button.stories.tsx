@@ -8,14 +8,13 @@ const meta: Meta<typeof Button> ={
     tags: ['autodocs'],
     argTypes:{
         variant:{
-            options:['fulfilled','outlined','ghost','white'],
+            options:['default','disabled'],
             control:{type:'select'},
             defaultValue:'fulfilled'
         },
-        size:{
-            options:['small','medium','large'],
-            control:{type:'select'},
-            defaultValue:'medium'
+        name: {
+            defaultValue: 'Button',
+            control: { type: 'text' },
         }
     }
 }
@@ -26,21 +25,20 @@ type Story = StoryObj<typeof Button>
 
 export const Default: Story = {
     name:'Default',
-    render: (args) => <Button {...args}>Button</Button>
+    render: (args) => (<div className={"w-[172px] h-[46px]"}> <Button {...args}/> </div>)
 }
 
-export const Fulfilled: Story = {
-    name:'Fulfilled',
-    render: (args) => <Button variant={'fulfilled'} {...args}>Button</Button>
+export const Defaultt: Story = {
+    name:'Mocked Default',
+    render: (args) => (<div className={"w-[172px] h-[46px]"}> <Button variant={"default"} name={"Button"} onClick={() => {}} /> </div>)
 }
-export const Outlined: Story = {
-    name:'Outlined',
-    render: (args) =>
-        <div className={'flex flex-col w-[250px] gap-2'}>
-            <Button variant={'outlined'} size={'large'} {...args}>Button</Button>
-            <Button variant={'outlined'} size={'medium'}{...args}>Button</Button>
-            <Button variant={'outlined'} size={'small'}{...args}>Button</Button>
-        </div>
+
+export const Disabled: Story = {
+    name:'Disabled',
+    render: (args) =>(<div className={"w-[172px] h-[46px]"}> <Button variant={"disabled"} name={"Button"} onClick={() => {}} /> </div>)
 }
+
+
+
 
 
