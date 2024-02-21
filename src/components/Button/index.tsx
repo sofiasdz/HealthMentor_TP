@@ -23,8 +23,8 @@ onClick: () => void;
 const Button = ({variant, name , onClick, ...rest}:ButtonProps) => {
 
     return (
-        <div className={`h-full w-full [font-family:'SF_Pro-Regular',Helvetica] rounded-[10px] text-grey-100 text-[20px] ${variant == "default" ? "bg-primary-500 cursor-pointer hover:bg-primary-700" : "bg-primary-400 "} flex justify-center items-center `}>
-            Add Medicine
+        <div className={`h-full w-full [font-family:'SF_Pro-Regular',Helvetica] rounded-[10px] text-grey-100 text-[20px] ${variant == "default" ? "bg-primary-500 cursor-pointer hover:bg-primary-700" : "bg-primary-400 "} flex justify-center items-center `} onClick={() => {onClick()}}>
+            {name}
         </div>
     )
 }

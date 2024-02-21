@@ -1,5 +1,5 @@
 import {cva, VariantProps} from "class-variance-authority";
-import React from "react";
+import React, {useState} from "react";
 import {CardButton} from "../ButtonCards";
 
 const cardsVariants = cva([], {
@@ -19,7 +19,34 @@ buttonVariant: "clicked" | "clickeable" | "passedTime" | "unable"
 }
 
 export const Cards = ({buttonVariant, medication, dose, variant, ...rest}: CardsProps) => {
+    const [Variant, setVariant] = useState<"clicked" | "clickeable" | "passedTime" | "">("");
 
+
+    const whatVariant = () => {
+        if (buttonVariant !== "unable"){
+            if (Variant === ""){
+                return buttonVariant
+            } else {
+                return Variant
+            }
+        }
+    }
+
+    const changeVariant = () => {
+        if (Variant === ""){
+            if (buttonVariant === "clickeable"){
+                setVariant("clicked")
+            }
+            if (buttonVariant === "passedTime"){
+                setVariant("clicked")
+            }
+            if (buttonVariant === "clicked"){
+                setVariant("clickeable")
+            }
+        } else {
+            setVariant("")
+        }
+    }
     return(
         <div className={"relative"}>
             <div className="w-[273px] h-[136px] rounded-[10px] border border-grey-300 z-[99] bg-grey-0">
@@ -43,8 +70,8 @@ export const Cards = ({buttonVariant, medication, dose, variant, ...rest}: Cards
                             </div>
 
                             {buttonVariant == "unable" ? (<></>) : (
-                            <div className={"mr-[17px] mt-[16px]"}>
-                                <CardButton variant={buttonVariant}></CardButton>
+                            <div className={"mr-[17px] mt-[16px] cursor-pointer"} onClick={() => {changeVariant()}}>
+                                <CardButton variant={whatVariant()}></CardButton>
                             </div>
                             )}
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {Header} from "../components/Header";
 import timee from "../components/assets/img.png"
 import {WeekTab} from "../components/WeekTab";
@@ -8,7 +8,7 @@ import {Footer} from "../components/Footer";
 import Button from "../components/Button";
 
 export const AddMedication = () => {
-
+const [cardVariant, setCardVariant] = useState<"clicked" | "clickeable" | "passedTime">("clickeable")
 
     return (
         <div className={"w-[393px] h-[852px] bg-grey-200"}>
@@ -35,12 +35,18 @@ export const AddMedication = () => {
                 <WeekTab activeDay={"Wednesday"}></WeekTab>
             </div>
 
-            <div className={"flex flex-row items-center mt-[16px]"}>
-                <div className={"[font-family:'SF_Pro-Regular',Helvetica] text-[16px] text-grey-700 text-left mt-[17px] ml-[21px] flex-grow"}>
+            <div className={"flex flex-row items-center mt-[16px] content-center"}>
+                <div className={"[font-family:'SF_Pro-Regular',Helvetica] text-[16px] text-grey-700 text-left  ml-[21px] flex-grow"}>
                     Every week?
                 </div>
-                <div className={"mr-[29px]"}>
-                <CardButton variant={"clickeable"}></CardButton>
+                <div className={"mr-[29px] cursor-pointer"} onClick={() => {
+                    if (cardVariant === "clickeable"){
+                        setCardVariant("clicked")
+                    } else {
+                        setCardVariant("clickeable")
+                    }
+                }}>
+                <CardButton variant={cardVariant}></CardButton>
                 </div>
             </div>
 
